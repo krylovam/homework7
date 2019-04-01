@@ -12,12 +12,8 @@ public class Test23 extends BaseRunner {
         TextInput textInput = new TextInput();
         textInput.setDriver(driver);
         driver.get(baseUrl);
-        WebElement dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'region')]")));
-        dynamicElement.click();
-        dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Москва и Московская обл.')]")));
-        dynamicElement.click();
+        clickXpath(driver, "//*[contains(@class,'region')]");
+        clickXpath(driver,"//div[contains(text(),'Москва и Московская обл.')]");
         textInput.setName("fio");
         textInput.sendText("Иванов Иван Иванович");
         textInput.setName("phone_mobile");

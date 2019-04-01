@@ -16,14 +16,12 @@ public class Test22 extends BaseRunner {
         select.setDriver(driver);
         CheckBox checkBox = new CheckBox();
         checkBox.setDriver(driver);
-        WebElement dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'region')]")));
-        dynamicElement.click();
-        dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Москва и Московская обл.')]")));
-        dynamicElement.click();
+        clickXpath(driver,"//*[contains(@class,'region')]");
+        clickXpath(driver,"//div[contains(text(),'Москва и Московская обл.')]");
         assertEquals("Москва и Московская область", driver.findElement(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")).getText());
         driver.navigate().refresh();
+        WebElement dynamicElement = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")));
         assertEquals("Москва и Московская область", driver.findElement(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")).getText());
         select.setText("Интернет");
         select.chooseValue("Безлимитный интернет");
@@ -34,12 +32,8 @@ public class Test22 extends BaseRunner {
         checkBox.setSelector("//*[contains(@class,'Checkbox')][contains(text(),'Безлимитные СМС')]");
         checkBox.getActive(true);
         String Moscow = driver.findElement(By.xpath("//*[contains(text(),'Общая цена')]")).getText();
-        dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")));
-        dynamicElement.click();
-        dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Краснодарский кр.')]")));
-        dynamicElement.click();
+        clickXpath(driver,"//*[contains(@class,'region')]//*[contains(@class,'title')]");
+        clickXpath(driver,"//div[contains(text(),'Краснодарский кр.')]");
         select.setText("Интернет");
         select.chooseValue("Безлимитный интернет");
         select.setText("Звонки");
