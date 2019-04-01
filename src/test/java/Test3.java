@@ -22,6 +22,6 @@ public class Test3 extends BaseRunner {
         options.setExperimentalOption("prefs",prefs);
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://www.tinkoff.ru/mobile-operator/documents/");
-        clickXpath(driver,"//a[contains(text(),'Описание акции «Первый месяц бесплатно»')]");
+        clickXpath(driver,"//*[contains(@href,'first-month-free')]");
             }
 }
