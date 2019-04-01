@@ -20,7 +20,7 @@ public class Test22 extends BaseRunner {
         clickXpath(driver,"//div[contains(text(),'Москва и Московская обл.')]");
         assertEquals("Москва и Московская область", driver.findElement(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")).getText());
         driver.navigate().refresh();
-        WebElement dynamicElement = (new WebDriverWait(driver, 10))
+        (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")));
         assertEquals("Москва и Московская область", driver.findElement(By.xpath("//*[contains(@class,'region')]//*[contains(@class,'title')]")).getText());
         select.setText("Интернет");
