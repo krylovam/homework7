@@ -2,8 +2,8 @@
 commit - 4
 Домашняя работа к лекции №7 "Основы автоматизации тестирования web-приложений на Selenium(Java)" Данная работа выполняет тесты на сайте https://www.tinkoff.ru/mobile-operator/tariffs/, по заданным заданиям
 
-Первый тест- Tests.tests.FirstTest Второй тест - Tests.tests.SecondTest 
-Тест 2.1- Tests.tests.Test21 Тест 2.2 - Tests.tests.Test22 Тест 2.3 - Tests.tests.Test23
+Первый тест- FirstTest Второй тест - SecondTest 
+Тест 2.1- Test21 Тест 2.2 - Test22 Тест 2.3 - Test23
 Тест 3* - не разобралась
 Инструкция к запуску:
 Скачать репозиторий любым удобным образом
